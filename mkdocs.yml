@@ -20,8 +20,10 @@ nav:
 
 extra_css:
     - css/extra.css
+    - css/asciinema-player.css
 
 extra_javascript:
+  - javascripts/asciinema-player.min.js
   - javascripts/extra.js
 
 markdown_extensions:

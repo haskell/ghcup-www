@@ -83,7 +83,7 @@ hide:
 ----
 
 
-![GHCup](./ghcup.gif){: .center style="width:700px"}
+<div id="asciinema-tui-main-demo"></div>
 
 <section class="index-cta-donate">
   <button class="donate-button">

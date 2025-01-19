@@ -112,8 +112,13 @@ function copyToClipboardWin() {
   button.focus();
 }
 
+function start_asciinema_player() {
+  AsciinemaPlayer.create('/ghcup/asciinema-tui-main-demo.cast', document.getElementById('asciinema-tui-main-demo'), { autoPlay: true, idleTimeLimit: 2, loop: 3 });
+}
+
 (function () {
     adjust_for_platform();
     set_up_default_platform_buttons();
+    start_asciinema_player();
 }());
 
