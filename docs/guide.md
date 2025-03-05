@@ -159,66 +159,91 @@ have a 5 minutes cache per default depending on the last access time of the file
 
 If you experience problems, consider clearing the cache via `ghcup gc --cache`.
 
-## Metadata
+## Release channels
 
-Metadata files are also called release or distribution channels. They describe tool versions, where to download them etc. and
-can be viewed here: [https://github.com/haskell/ghcup-metadata](https://github.com/haskell/ghcup-metadata).
+Release channels (also called distribution channels) are implemented by
+references to metadata files. These references can be added, or specified, in
+the following ways (explained further below):
 
-See the [description](https://github.com/haskell/ghcup-metadata#metadata-variants-distribution-channels)
-of metadata files to understand their purpose. These can be combined.
+* added at the command line, with the `ghcup config add-release-channel` command;
+* specified under the `url-source` key in GHCup's YAML configuration file
+  (`config.yaml`); and
+* specified at the command line, with GHCup's `--url-source` option.
 
-For example, if you want access to both prerelease and cross bindists, you'd do:
+For each relevant tool, the metadata files describe versions of the tool, where
+to download them, and other information. The files can be viewed here:
+[https://github.com/haskell/ghcup-metadata](https://github.com/haskell/ghcup-metadata).
+
+The purpose of each metadata file is described
+[here](https://github.com/haskell/ghcup-metadata#metadata-variants-distribution-channels).
+These purposes can be combined.
+
+For example, if you want to add access to both 'prerelease' and 'cross' binary
+distributions, you can command:
 
 ```sh
 ghcup config add-release-channel prereleases
 ghcup config add-release-channel cross
 ```
 
-This results in the following configuration in `~/.ghcup/config.yaml`:
+Startig with the default, this results in the following configuration in GHCup's
+YAML configuration file:
 
 ```yaml
 url-source:
-# the base url that contains all the release bindists
-- GHCupURL
+- GHCupURL # An alias for the base URL that contains all the release bindists
 - prereleases
-# cross bindists
 - cross
 ```
 
-You can add as many channels as you like. They are combined under *Last*, so versions from the prerelease channel
-here overwrite the default ones, if any.
+You can add as many release channels as you like. They are combined such that
+information in later channels takes precendence over information in earlier
+ones. In the example above, versions from the 'prerelease' channel overwrite
+the default ones, if any.
 
-To remove the channel, delete the entire `url-source` section or set it back to the default:
+The default specification is:
 
 ```yml
 url-source:
   - GHCupURL
 ```
 
-Also see [config.yaml](https://github.com/haskell/ghcup-hs/blob/master/data/config.yaml)
-for more options.
+To remove all release channels, delete the entire `url-source` section or set it
+to the default.
 
-You can also use an alternative metadata via the one-shot CLI option:
+For further information about possible values of the `url-source` key, see
+this example configuration file:
+[link](https://github.com/haskell/ghcup-hs/blob/master/data/config.yaml).
+
+The possible values include URLs. If you use a URL, you might need to check
+whether there are more recent versions of the metadata file. For example
+`ghcup-0.0.9.yaml` may have superceded `ghcup-0.0.8.yaml`. Old files are not
+supported indefinitely, although they are supported for some time.
+
+You can also specify an alternative metadata file at the command line using the
+`--url-source` option, which accepts an alias or a URL. Such a file replaces the
+specification in GHCup's YAML configuration file. For example:
 
 ```sh
+ghcup --url-source=prereleases tui
 ghcup --url-source=https://some-url/ghcup-0.0.9.yaml tui
-```
 
-One main caveat of using URLs is that you might need to check whether there are new versions
-of the file (e.g. `ghcup-0.0.8.yaml` vs `ghcup-0.0.9.yaml`). Although old metadata files
-are supported for some time, they are not so indefinitely.
+```
 
 ### Mirrors
 
-Metadata files can also be used to operate 3rd party mirrors, in which case you want to use
-a URL instead of the `GHCupURL` alias. E.g. in `~/.ghcup/config.yaml`, you'd do:
+Metadata files can also be used to operate third party mirrors. However, more
+recent versions of GHCup allow more sophisticated mirror support - see the
+section on [mirrors (proper)](#mirrors-proper) below.
+
+If you do use metafiles for mirroring, you will use a URL instead of the
+default `GHCupURL` alias. For example, in GHCup's YAML configuration file, you
+would specify:
 
 ```yml
 url-source:
   - https://mirror.sjtu.edu.cn/ghcup/yaml/ghcup/data/ghcup-0.0.9.yaml
 ```
-
-Note that later versions of GHCup allow more sophisticated mirror support, see [here](#mirrors-proper).
 
 #### Known mirrors
 
