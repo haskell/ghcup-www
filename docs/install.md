@@ -46,9 +46,13 @@ The following distro packages are required: `build-essential curl libffi-dev lib
 
 The following distro packages are required: `build-essential curl libffi-dev libffi7 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5`
 
-#### Version >= 12
+#### Version = 12
 
 The following distro packages are required: `build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5`
+
+#### Version >= 13
+
+The following distro packages are required: `build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses6 libtinfo6`
 
 ### Linux Ubuntu
 
