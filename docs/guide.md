@@ -316,40 +316,60 @@ git pull --ff-only origin master
 
 ## Stack integration
 
-Stack manages GHC versions internally by default. In order to make it use ghcup installed
-GHC versions there are two strategies.
+By default, Stack tries to manage GHC versions itself. However, Stack can use
+GHC versions installed by GHCup. There are two strategies for doing so.
 
-### Strategy 1: Stack hooks (new, recommended)
+### Strategy 1 (recommended): Hook up Stack to use GHCup
 
-Since stack 2.9.1 you can customize the installation logic of GHC completely, see
-[https://docs.haskellstack.org/en/stable/configure/customisation_scripts/#ghc-installation-customisation](https://docs.haskellstack.org/en/stable/configure/customisation_scripts/#ghc-installation-customisation).
+Stack (since v2.9.1) can be configured to try to use GHCup to manage GHC
+versions, using a 'hook'.
 
-We can use this to simply invoke ghcup whenever stack is trying to install/discover a GHC versions. This
-is done via placing a shell script at `~/.stack/hooks/ghc-install.sh` and making it executable.
+The commands to [install GHCup and the Haskell Toolchain](install.md) include an
+option to create that hook. That is the recommended way to do so. They can
+safely be run again at any time.
 
-The ghcup bootstrap script asks you during installation whether you want to install this shell script. You can also
-install/update it manually like so:
+A hook can also be created manually, by placing a suitable `sh` script named
+`ghc-install.sh` in a `hooks` directory in the Stack root. On Unix-like
+operating systems, the script file should be marked as executable.
 
-```sh
-mkdir -p ~/.stack/hooks/
-curl https://raw.githubusercontent.com/haskell/ghcup-hs/master/scripts/hooks/stack/ghc-install.sh \
-  > ~/.stack/hooks/ghc-install.sh
-chmod +x ~/.stack/hooks/ghc-install.sh
-# hooks are only run when 'system-ghc: false'
+You can create a hook manually with the following steps:
+
+```text
+# Change to the Stack root directory:
+stack path --stack-root | cd
+# Make a hooks directory (if it does not exist):
+mkdir hooks
+# Change to that hooks directory:
+cd hooks
+# Download GHCup's ghc-install.sh file:
+curl -O https://raw.githubusercontent.com/haskell/ghcup-hs/master/scripts/hooks/stack/ghc-install.sh
+# On Unix-like operating systems only, mark file as executable:
+chmod +x ghc-install.sh
+# Hooks are only run when 'system-ghc: false' (Stack's default):
 stack config set system-ghc false --global
 ```
 
-By default, when the hook fails for whatever reason, stack will fall back to its own installation logic. To disable
-this, run `stack config set install-ghc false --global`.
+If the hook fails, by default, Stack will try to manage GHC versions itself.
+Stack can be configured not to do that for any project (globally). To do so,
+command:
 
-### Strategy 2: System GHC (works on all stack versions)
-
-You can instruct stack to use "system" GHC versions (whatever is in PATH). To do so,
-run the following commands:
-
-```sh
+```text
 stack config set install-ghc false --global
-stack config set system-ghc  true  --global
+```
+
+For more information about Stack hooks, see Stack's
+[GHC installation customisation](https://docs.haskellstack.org/en/stable/configure/customisation_scripts/#ghc-installation-customisation)
+documentation.
+
+### Strategy 2 (alternative): Use only GHC on the PATH
+
+Stack can be configured for all projects (globally) to try to use the 'system'
+GHC on the PATH (including one installed by GHCup) and not to try to manage GHC
+versions itself. To do so, command:
+
+```text
+stack config set system-ghc true --global
+stack config set install-ghc false --global
 ```
 
 ### Using stack's setup-info metadata to install GHC

@@ -6,9 +6,11 @@ It follows the UNIX philosophy of [do one thing and do it well](https://en.wikip
 
 ## How to install
 
-The following commands will download the `ghcup` binary into `~/.ghcup/bin` (or `C:\ghcup\bin` on windows) and then
+The following commands will use a `sh` script to download the `ghcup` binary into `~/.ghcup/bin` (or `C:\ghcup\bin` on windows) and then
 run it to interactively install the [Haskell Toolchain](#supported-tools). These commands should be run as **non-root/non-admin
 user**.
+
+These commands can safely be run again at any time.
 
 For Linux, macOS, FreeBSD or Windows Subsystem 2 for Linux, run this in a terminal:
 

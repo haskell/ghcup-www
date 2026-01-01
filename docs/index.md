@@ -37,7 +37,7 @@ hide:
 
     <div class="ghcup-os-container" id="ghcup-instructions-win">
       <h3>To install on Windows</h3>
-      <p>run the following in a PowerShell session (as a non-admin user):<p>
+      <p>run the following in a PowerShell session (as a non-admin user):</p>
 
       <div class="command-button">
 	    <pre>
@@ -49,6 +49,9 @@ hide:
 	<div class="footer">
 		<a href="https://github.com/haskell/ghcup-hs/blob/master/scripts/bootstrap/bootstrap-haskell.ps1" target="_blank">What does this do?</a> <b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/#manual-installation">I don't like curl | sh</a> <div class="show-all-platforms"><b>&nbsp;&middot;&nbsp;</b> <a class="show-all-platforms-button" href="#">Show all platforms</a></div><b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/#system-requirements">System requirements</a></p>
 	</div>
+  <div>
+    <p>These commands can safely be run again at any time.</p>
+  </div>
     </div>
 </section>
 
