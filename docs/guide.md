@@ -119,6 +119,7 @@ This is the complete list of env variables that change GHCup behavior:
 * `GHCUP_WGET_OPTS`: additional options that can be passed to wget
 * `GHCUP_GPG_OPTS`: additional options that can be passed to gpg
 * `GHCUP_SKIP_UPDATE_CHECK`: Skip the (possibly annoying) update check when you run a command
+* `NO_COLOR`: Disables ANSI color escape codes, also see [https://no-color.org](https://no-color.org/)
 * `CC`/`LD` etc.: full environment is passed to the build system when compiling GHC via GHCup
 
 On windows, there's additionally:
