@@ -337,7 +337,7 @@ You can create a hook manually with the following steps:
 
 ```text
 # Change to the Stack root directory:
-stack path --stack-root | cd
+cd $(stack path --stack-root)
 # Make a hooks directory (if it does not exist):
 mkdir hooks
 # Change to that hooks directory:
