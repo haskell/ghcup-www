@@ -16,6 +16,7 @@ GHCup supports development via cabal and stack. E.g.:
 
 ## Contribution process and expectations
 
+* LLM assisted contributions are not welcome
 * discuss your idea first before implementing anything
 * GHCup is a dictatorship, so the final decisions are made by the author
 * we don't manage contributors... you can work on anything you like
