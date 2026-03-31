@@ -4,6 +4,16 @@ GHCup makes it easy to install specific versions of GHC on GNU/Linux,
 macOS (aka Darwin), FreeBSD and Windows and can also bootstrap a fresh [Haskell developer environment](#supported-tools) from scratch.
 It follows the UNIX philosophy of [do one thing and do it well](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well). Similar in scope to [rustup](https://github.com/rust-lang-nursery/rustup.rs), [pyenv](https://github.com/pyenv/pyenv) and [jenv](http://www.jenv.be).
 
+## Availability of new versions
+
+GHCup is a distribution channel. As such there may be a lag of 1-2 weeks after a release
+of e.g. GHC has concluded. This involves manual QA, review of the metadata, creation of
+unofficial bindists, etc.
+
+GHCup is not involved in upstream's CI infrastructure or release process. It's a separate project.
+
+Please do not ask when the new version of tool XY will be available.
+
 ## How to install
 
 The following commands will use a `sh` script to download the `ghcup` binary into `~/.ghcup/bin` (or `C:\ghcup\bin` on windows) and then
