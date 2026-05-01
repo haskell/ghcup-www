@@ -15,6 +15,7 @@ nav:
   - "Installation": install.md
   - "First steps": steps.md
   - "User Guide": guide.md
+  - "Packager Guide": packaging.md
   - "Developer Guide": dev.md
   - About: about.md
 
