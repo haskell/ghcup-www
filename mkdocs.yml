@@ -5,16 +5,48 @@ site_author: GHCup Team
 
 repo_url: https://github.com/haskell/ghcup-www
 
+site_dir: _site
 theme:
-    name: mkdocs
-    locale: en
-    custom_dir: docs/overrides
+  name: material
+  palette:
+    primary: 'deep purple'
+    accent: 'deep purple'
+  features:
+  - content.code.annotate
+  - content.code.copy
+  - content.code.select
+  - content.tabs.link
+  - navigation.indexes
+  - navigation.tabs
+  - navigation.top
+  - toc.follow
+  locale: en
+  custom_dir: docs/overrides
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3   # make sure this is set, default may be cutting off
 
 nav:
   - Home: index.md
-  - "Installation": install.md
-  - "First steps": steps.md
-  - "User Guide": guide.md
+  - "Installation":
+      - install/index.md
+      - install/reqs.md
+      - install/support.md
+      - install/manual.md
+  - "First steps":
+      - steps/index.md
+      - steps/where.md
+  - "User Guide":
+      - guide/index.md
+      - guide/config.md
+      - guide/channels.md
+      - guide/stack.md
+      - guide/advanced_install.md
+      - guide/compiling.md
+      - guide/cross.md
+      - guide/trouble.md
   - "Packager Guide": packaging.md
   - "Developer Guide": dev.md
   - About: about.md
@@ -22,16 +54,13 @@ nav:
 extra_css:
     - css/extra.css
     - css/asciinema-player.css
+    - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
 
 extra_javascript:
   - javascripts/asciinema-player.min.js
   - javascripts/extra.js
-
-markdown_extensions:
-    - toc:
-        permalink: 
-    - admonition
-    - attr_list
-    - def_list
-    - meta
+  # Read the Docs requires JQuery for its JavaScript code to inject the flyout
+  # menu. Material for MkDocs does not come with JQuery.
+  - 'https://code.jquery.com/jquery-3.6.1.min.js'
+  - https://cdn.jsdelivr.net/npm/mermaid@11.7.0/dist/mermaid.min.js
 

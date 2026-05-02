@@ -130,6 +130,9 @@ exeSymLinked:
 
 `${PKGVER}` resolves to the package version.
 
+If there are multiple binaries, it's important to understand that the first in the list will
+be used for `ghcup whereis <tool>`.
+
 #### Symlink patterns (advanced)
 
 We can also specify symlinks as patterns, which is rather involved. This is used for complex things like HLS:
@@ -217,6 +220,50 @@ make:
 - `PreferSystem`: will not overwrite existing env variables
 - `PreferSpec`: will overwrite existing env variables
 - `OnlySpec`: will only consider env variables specified here
+
+### Tool details
+
+Unlike all the previous objects, this one doesn't live below `dlInstallSpec`, but directly under
+the tool name.
+
+In the above dhall example we have the yaml:
+
+```yaml
+ghcupDownloads:
+  dhall:
+    1.42.2:
+      viTags:
+        - Latest
+        - Recommended
+      viArch:
+        A_64:
+          Linux_UnknownLinux:
+          # ... etc.
+```
+
+And so on. This is still valid yaml. But we can add information to the tool, such as
+description and author, for that, we need to inject it like so:
+
+```yaml
+ghcupDownloads:
+  dhall:
+    toolDetails:
+      toolHomepage: "https://dhall-lang.org/"
+      toolRepository: "https://github.com/dhall-lang/dhall-lang"
+      toolDescription: "Maintainable configuration files"
+      toolAuthor: "Gabriella Gonzalez"
+      toolMaintainer: "Gabriella Gonzalez"
+      toolContact: "some-email@gmail.com"
+    toolVersions:
+      1.42.2:
+        viTags:
+          - Latest
+          - Recommended
+        viArch:
+          A_64:
+            Linux_UnknownLinux:
+          # ... etc.
+```
 
 ## What to do and what not to do
 

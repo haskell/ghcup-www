@@ -13,7 +13,7 @@ installed a Haskell toolchain:
 The Glorious Glasgow Haskell Compilation System, version 8.10.7
 ```
 
-If this fails, consult [the Getting started page](install.md) for information on
+If this fails, consult [the Getting started page](../install/index.md) for information on
 how to install Haskell on your computer.
 
 This guide is partly based on [Gil Mizrahi's blog](https://gilmi.me/blog/post/2021/08/14/hs-core-tools).
@@ -322,28 +322,3 @@ ghci> otherFunc "Hello Haskell"
 For further information about how to manage Haskell projects
 see the [Cabal user guide](https://cabal.readthedocs.io/en/stable/getting-started.html).
 
-# Where to go from here
-
-<div class="text-center main-buttons">
-<a href="https://hackage.haskell.org/" class="btn btn-primary" role="button">Discover Haskell packages</a>
-<a href="https://hackage.haskell.org/package/base" class="btn btn-primary" role="button">The standard library</a>
-<a href="https://haskell-language-server.readthedocs.io/en/stable/installation.html" class="btn btn-primary" role="button">Editor setup with HLS</a>
-<a href="https://play.haskell.org/" class="btn btn-primary" role="button">Online playground</a>
-</div>
-
-## How to learn Haskell proper
-
-To learn Haskell, try any of those:
-
-- A beginner friendly [4-lectures course](https://github.com/haskell-beginners-2022/course-plan) with exercises (by [Dmitrii Kovanikov](https://chshersh.com/))
-- An in-depth university [CIS 194 Haskell course](https://www.cis.upenn.edu/~cis1940/spring13/) including exercises (by [Brent Yorgey](https://byorgey.wordpress.com/))
-
-## Projects to contribute to
-
-* [https://github.com/haskell/haskell-language-server](https://github.com/haskell/haskell-language-server)
-* [https://github.com/haskell/cabal](https://github.com/haskell/cabal)
-* [https://github.com/commercialhaskell/stack](https://github.com/commercialhaskell/stack)
-* [https://github.com/haskell/ghcup-hs](https://github.com/haskell/ghcup-hs)
-* [https://github.com/jgm/pandoc](https://github.com/jgm/pandoc)
-* [https://github.com/simonmichael/hledger](https://github.com/simonmichael/hledger)
-* [https://github.com/koalaman/shellcheck](https://github.com/koalaman/shellcheck)
