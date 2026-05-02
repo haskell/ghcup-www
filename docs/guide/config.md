@@ -64,8 +64,8 @@ build-wrapper:
   cmd: bwrap
   cmdArgs:
     [ --ro-bind, /, /
-    , --bind, /home/hasufell/.ghcup, /home/hasufell/.ghcup
-    , --bind, /home/hasufell/.cabal, /home/hasufell/.cabal
+    , --bind, /home/wurst/.ghcup, /home/wurst/.ghcup
+    , --bind, /home/wurst/.cabal, /home/wurst/.cabal
     , --dev, /dev
     , --proc, /proc
     , --tmpfs, /tmp
