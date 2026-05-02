@@ -8,10 +8,6 @@ GHCup supports development via cabal and stack. E.g.:
 
 * build via stack: `stack build`
 * build via cabal (with whatever GHC version): `cabal build`
-* build via cabal reproducibly with a specific GHC version
-    - GHC 8.10.7: `cabal build --project-file=cabal.ghc8107.project`
-    - GHC 9.0.2: `cabal build --project-file=cabal.ghc902.project`
-    - and so on (check supported versions via `ls cabal.ghc+([0-9]).project`)
 * build the release binaries: `cabal build --project-file=cabal.project.release`
 
 ## Contribution process and expectations
@@ -26,15 +22,7 @@ GHCup supports development via cabal and stack. E.g.:
 
 ## Module graph
 
-[![Module graph](./modules_small.svg){: .center style="width:900px"}](./modules_wide.svg)
-
-Main functionality is in `GHCup` module. Utility functions are
-organised tree-ish in `GHCup.Utils` and `GHCup.Utils.*`.
-
-Anything dealing with ghcup specific directories is in
-`GHCup.Utils.Dirs`.
-
-Download information on where to fetch bindists from is in the [ghcup-metadata](https://github.com/haskell/ghcup-metadata) repository.
+[![Module graph](./modules_small.svg)](./modules_wide.svg)
 
 ## Design decisions
 
@@ -107,6 +95,7 @@ Every subcommand now lives in its own module under [GHCup.OptParse.MyCommand](ht
    introducing a non-unix way of handling processes via the `process` library. It also introduced considerable
    amounts of CPP wrt file handling, installation etc.
 3. This refactor split up the huge `Main.hs` and put every subcommand in its own module: [#212](https://gitlab.haskell.org/haskell/ghcup-hs/-/merge_requests/212)
+4. This refactor added support for installing arbitrary tools. In that process a lot of code duplication was removed, the yaml format was extended in non-trivial ways and a lot of modules were moved around and added. The two main PRs are [Insaller DSL](https://github.com/haskell/ghcup-hs/pull/1315) and [Rework TUI](https://github.com/haskell/ghcup-hs/pull/1322).
 
 # Releasing
 

@@ -12,9 +12,9 @@ hide:
 <p class="ghcup-intro">GHCup is the main installer for the general purpose language <a href="https://www.haskell.org">Haskell</a>.</p>
 
 <div class="text-center main-buttons">
-<a href="install/" class="btn btn-primary" role="button">Installation</a>
-<a href="steps/" class="btn btn-primary" role="button">First steps</a>
-<a href="guide/" class="btn btn-primary" role="button">User Guide</a>
+<a href="install/" class="md-button md-button--primary" role="button">Installation</a>
+<a href="steps/" class="md-button md-button--primary" role="button">First steps</a>
+<a href="guide/" class="md-button md-button--primary" role="button">User Guide</a>
 </div>
 
 <section class="qi-container">

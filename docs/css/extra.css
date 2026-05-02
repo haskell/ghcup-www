@@ -1,22 +1,48 @@
 :root {
-  --theme-purple: #5E5184;
-  --theme-purple-dark: rgba(69, 59, 97, 0.5);
-  --ukraine-top: #0057B8;
-  --ukraine-bottom: #FFD700;
-  --link-pink: #9E358F;
+  --theme-blue: #0057B8;
+  --theme-yellow: #FFD700;
+  --theme-purple: #7e56c2;
+  --theme-purple-dark: #4a3f6b;
+}
+
+body .md-button--primary {
+  background-color: var(--theme-purple) !important;
+  border-color: var(--theme-purple) !important;
+}
+
+body .md-button--primary:hover {
+  background-color: var(--theme-purple-dark) !important;
+  border-color: var(--theme-purple-dark) !important;
+}
+
+.md-header {
+  background-color: var(--theme-blue);
+}
+
+.md-tabs {
+  background-color: var(--theme-yellow);
+  color: var(--theme-blue);
+}
+
+.md-tabs__link {
+  color: var(--theme-blue);
+  opacity: 1;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: var(--theme-blue);
+  opacity: 0.7;
+}
+
+.md-tabs__list {
+  padding: 0;
 }
 
 h2
 {
   border-bottom:1px solid #CCC;
   padding-bottom:5px;
-  padding-top:15px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 60px;
-  font-weight: 300;
   padding-top:15px;
 }
 
@@ -46,6 +72,9 @@ h4 {
 }
 
 .index-ghcup-hero h1 {
+  margin: 0 0 0em;
+  font-size: 60px;
+  font-weight: 300;
 }
 
 div.col-md-9 h1:first-of-type {
@@ -120,38 +149,11 @@ body .bg-primary {
   border: 0px;
 }
 
-body .btn-primary {
-  background-image: none;
-  background-color: var(--theme-purple);
-  border: 1px solid var(--theme-purple);
-}
-
 .navbar.fixed-top {
   background-image: none;
   background-color: var(--ukraine-top);
   border-bottom: 40px solid var(--ukraine-bottom);
   padding: 0px;
-}
-
-.btn-primary:hover {
-  background-color: var(--theme-purple);
-  border: 1px solid var(--theme-purple);
-}
-
-a {
-  color: var(--link-pink);
-}
-
-a:hover {
-  color: #996FC2;
-}
-
-#toc-collapse a.nav-link {
-  color: var(--link-pink);
-}
-
-#toc-collapse a:hover.nav-link {
-  color: #996FC2;
 }
 
 .col-md-9 img.main-logo {
@@ -169,11 +171,33 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 5px;
+}
+
+.main-buttons p {
+  display: contents;
+}
+
+.where {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.where a {
+  flex: 0 0 calc(50% - 5px);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .main-buttons a {
-  margin-right: 5px;
-  margin-bottom: 5px;
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 150px;
+  max-width: 250px;
+  white-space: nowrap;
 }
 
 .command-button {
@@ -230,7 +254,7 @@ div.command-button button:hover {
   border: 1px solid black;
 }
 
-div.command-button button:focus {
+div.command-button button:active {
   background-color: #04aa6d;
 }
 
