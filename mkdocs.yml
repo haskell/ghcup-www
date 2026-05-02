@@ -49,7 +49,12 @@ nav:
       - guide/trouble.md
   - "Packager Guide": packaging.md
   - "Developer Guide": dev.md
-  - About: about.md
+  - About:
+      - about/index.md
+      - about/team.md
+      - about/governance.md
+      - about/known_problems.md
+      - about/faq.md
 
 extra_css:
     - css/extra.css
