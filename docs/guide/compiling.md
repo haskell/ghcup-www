@@ -22,6 +22,7 @@ There are 3 main ways to compile HLS from source.
     - `ghcup compile hls --git-ref master --ghc 9.2.3`
     - `ghcup compile hls --git-ref a32db0b --ghc 9.2.3`
     - `ghcup compile hls --git-ref 1.7.0.0 --ghc 9.2.3`
+    - `ghcup compile hls --git-ref crtschin/export-1-export --ghc 9.10.3 -r https://github.com/crtschin/haskell-language-server` (PR from a fork)
 3. from source distribution that's packaged during release from the corresponding git sources
     - `ghcup compile hls --source-dist 1.7.0.0 --ghc 9.2.3`
 
