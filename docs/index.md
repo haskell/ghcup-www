@@ -31,7 +31,7 @@ hide:
       <span>
       </span>
 	<div class="footer">
-		<a href="https://github.com/haskell/ghcup-hs/blob/master/scripts/bootstrap/bootstrap-haskell" target="_blank">What does this do?</a> <b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/#manual-installation">I don't like curl | sh</a> <div class="show-all-platforms"><b>&nbsp;&middot;&nbsp;</b> <a class="show-all-platforms-button" href="#">Show all platforms</a></div><b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/#system-requirements">System requirements</a></p>
+		<a href="https://github.com/haskell/ghcup-hs/blob/master/scripts/bootstrap/bootstrap-haskell" target="_blank">What does this do?</a> <b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/manual/">I don't like curl | sh</a> <div class="show-all-platforms"><b>&nbsp;&middot;&nbsp;</b> <a class="show-all-platforms-button" href="#">Show all platforms</a></div><b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/reqs/">System requirements</a></p>
 	</div>
     </div>
 
@@ -47,7 +47,7 @@ hide:
         <button class="btn" onclick="copyToClipboardWin()" id="ghcup-windows-button"><i class="fa fa-copy"></i></button>
       </div>
 	<div class="footer">
-		<a href="https://github.com/haskell/ghcup-hs/blob/master/scripts/bootstrap/bootstrap-haskell.ps1" target="_blank">What does this do?</a> <b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/#manual-installation">I don't like curl | sh</a> <div class="show-all-platforms"><b>&nbsp;&middot;&nbsp;</b> <a class="show-all-platforms-button" href="#">Show all platforms</a></div><b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/#system-requirements">System requirements</a></p>
+		<a href="https://github.com/haskell/ghcup-hs/blob/master/scripts/bootstrap/bootstrap-haskell.ps1" target="_blank">What does this do?</a> <b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/manual/">I don't like curl | sh</a> <div class="show-all-platforms"><b>&nbsp;&middot;&nbsp;</b> <a class="show-all-platforms-button" href="#">Show all platforms</a></div><b>&nbsp;&middot;&nbsp;</b> <a href="https://www.haskell.org/ghcup/install/reqs/">System requirements</a></p>
 	</div>
   <div>
     <p>These commands can safely be run again at any time.</p>
